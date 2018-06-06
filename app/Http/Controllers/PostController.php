@@ -9,12 +9,23 @@ class PostController extends Controller
 {
     public function index()
     {
-    	$posts = Post::all();
+    	$posts = Post::latest()->get();
     	return view('post.index',compact('posts'));
     }
 
     public function show(Post $post)
     {
     	return view('post.show',compact('post'));
+    }
+
+    public function create()
+    {
+        return view('post.create');
+    }
+
+public function store()
+    {
+       Post::create(request(['title','body']));
+        return redirect('/');
     }
 }
