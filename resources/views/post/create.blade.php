@@ -12,6 +12,10 @@
             <label for="body">Body</label>
             <textarea name="body" id="body" cols="30" rows="10" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-default">Publish</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Publish</button>
+        </div>
+        
+        @include('forms.errors')
     </form>
 @endsection
